@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2021-03-01T05:53:42Z</date>
+    <groups>
+        <group>
+            <name>Templates/Network Devices</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>BEST-UBIQUTI-AIROS</template>
+            <name>BEST-UBIQUTI-AIROS</name>
+            <description>Template Net Ubiquiti AirOS version: 0.15&#13;
+MIBs used:&#13;
+FROGFOOT-RESOURCES-MIB&#13;
+IEEE802dot11-MIB&#13;
+Known Issues:&#13;
+description : UBNT unifi reports speed: like IF-MIB::ifSpeed.1 = Gauge32: 4294967295 for all interfaces&#13;
+version : Firmware: BZ.ar7240.v3.7.51.6230.170322.1513&#13;
+device : UBNT UAP-LRdescription : UBNT AirMax(NanoStation, NanoBridge etc) reports ifSpeed: as 0 for VLAN and wireless(ath0) interfaces&#13;
+version : Firmware: XW.ar934x.v5.6-beta4.22359.140521.1836&#13;
+device : NanoStation M5description : UBNT AirMax(NanoStation, NanoBridge etc) reports always return ifType: as ethernet(6) even for wifi,vlans and other types&#13;
+version : Firmware: XW.ar934x.v5.6-beta4.22359.140521.1836&#13;
+device : NanoStation M5description : ifXTable is not provided in IF-MIB. So Interfaces Simple Template is used instead&#13;
+version : all above&#13;
+device : NanoStation, UAP-LR</description>
+            <groups>
+                <group>
+                    <name>Templates/Network Devices</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>CPU</name>
+                </application>
+                <application>
+                    <name>Memory</name>
+                </application>
+                <application>
+                    <name>Networking</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>RF Frequency Mhz</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.41112.1.4.1.1.4.1</snmp_oid>
+                    <key>frequency</key>
+                    <history>365d</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>LAN RX Receive Total</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.2.1.2.2.1.10.2</snmp_oid>
+                    <key>ifInOctets.2</key>
+                    <delay>5m</delay>
+                    <history>365d</history>
+                    <units>B</units>
+                    <description>WLAN TX - Transmit</description>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>FAS3220 Port role</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>WLAN RX Receive Total</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.2.1.2.2.1.10.5</snmp_oid>
+                    <key>ifInOctets.5</key>
+                    <delay>5m</delay>
+                    <history>365d</history>
+                    <units>B</units>
+                    <description>WLAN TX - Transmit</description>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>FAS3220 Port role</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>LAN TX Transmit Total</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.2.1.2.2.1.16.2</snmp_oid>
+                    <key>IfOutOctets.2</key>
+                    <delay>5m</delay>
+                    <history>365d</history>
+                    <units>B</units>
+                    <description>WLAN TX - Transmit</description>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>FAS3220 Port role</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>WLAN TX Transmit Total</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.2.1.2.2.1.16.5</snmp_oid>
+                    <key>ifOutOctets.5</key>
+                    <delay>5m</delay>
+                    <history>365d</history>
+                    <units>B</units>
+                    <description>WLAN TX - Transmit</description>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>FAS3220 Port role</name>
+                    </valuemap>
+                </item>
+                <item>
+                    <name>Eth0 Speed</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.2.1.2.2.1.5.2</snmp_oid>
+                    <key>ifSpeed.2</key>
+                    <delay>1h</delay>
+                    <history>365d</history>
+                    <units>b</units>
+                    <description>Ethernet Networking Adapter Rate (10Mb/100Mb/1000Mb)</description>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Noise Floor</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.41112.1.4.5.1.8.1</snmp_oid>
+                    <key>NoiseFloor</key>
+                    <delay>1h</delay>
+                    <history>365d</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Wireless Signal</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.41112.1.4.5.1.5.1</snmp_oid>
+                    <key>signal</key>
+                    <delay>10m</delay>
+                    <history>365d</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>CPU utilization</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.10002.1.1.1.4.2.1.3.2</snmp_oid>
+                    <key>system.cpu.util[loadValue.2]</key>
+                    <delay>1h</delay>
+                    <history>30d</history>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <description>MIB: FROGFOOT-RESOURCES-MIB&#13;
+5 minute load average of processor load.</description>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{avg(5m)}&gt;{$CPU_UTIL_MAX}</expression>
+                            <name>High CPU utilization</name>
+                            <priority>AVERAGE</priority>
+                            <description>Last value: {ITEM.LASTVALUE1}.</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Firmware Version</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.2.840.10036.3.1.2.1.4.5</snmp_oid>
+                    <key>system.hw.firmware</key>
+                    <delay>1h</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>Firmware Version</description>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{diff()}=1 and {strlen()}&gt;0</expression>
+                            <recovery_mode>NONE</recovery_mode>
+                            <name>Firmware has changed</name>
+                            <priority>INFO</priority>
+                            <description>Last value: {ITEM.LASTVALUE1}.
+Firmware version has changed. Ack to close</description>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Hardware model name</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.2.840.10036.3.1.2.1.3.5</snmp_oid>
+                    <key>system.hw.model</key>
+                    <delay>1d</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>MIB: IEEE802dot11-MIB&#13;
+A printable string used to identify the manufacturer's product name of the resource. Maximum string length is 128 octets.</description>
+                    <inventory_link>MODEL</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Device Name</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.2.1.1.5.0</snmp_oid>
+                    <key>system.name</key>
+                    <delay>1d</delay>
+                    <history>365d</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <description>Device Name</description>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>Uptime</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.2.1.1.3.0</snmp_oid>
+                    <key>system.uptime[sysUpTime.0]</key>
+                    <history>365d</history>
+                    <value_type>FLOAT</value_type>
+                    <units>uptime</units>
+                    <description>Uptime</description>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>Available memory</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.10002.1.1.1.1.2.0</snmp_oid>
+                    <key>vm.memory.free[memFree]</key>
+                    <delay>1d</delay>
+                    <history>30d</history>
+                    <units>B</units>
+                    <description>MIB: FROGFOOT-RESOURCES-MIB</description>
+                    <applications>
+                        <application>
+                            <name>Networking</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1024</params>
+                        </step>
+                    </preprocessing>
+                </item>
+            </items>
+            <macros>
+                <macro>
+                    <macro>{$CPU_UTIL_MAX}</macro>
+                    <value>90</value>
+                </macro>
+                <macro>
+                    <macro>{$MEMORY_UTIL_MAX}</macro>
+                    <value>90</value>
+                </macro>
+            </macros>
+        </template>
+    </templates>
+    <graphs>
+        <graph>
+            <name>CPU utilization</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <ymax_type_1>FIXED</ymax_type_1>
+            <graph_items>
+                <graph_item>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>BEST-UBIQUTI-AIROS</host>
+                        <key>system.cpu.util[loadValue.2]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+    <value_maps>
+        <value_map>
+            <name>FAS3220 Port role</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>Undef</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>Cluster</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>Data</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>Node-MGMT</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>Intercluster</newvalue>
+                </mapping>
+                <mapping>
+                    <value>5</value>
+                    <newvalue>Cluster-MGMT</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
